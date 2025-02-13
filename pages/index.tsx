@@ -20,7 +20,7 @@ import {
   WorkExperience,
 } from "sections";
 import { /*getArticles,*/ getmediumArticles, /*getInstagramMedia*/ } from "services";
-import type { /*Article,*/ mediumArticles, InstagramMedia } from "types/Sections";
+import type { /*Article,*/ InstagramMedia,mediumArticles } from "types/Sections";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // const articles = await getArticles();

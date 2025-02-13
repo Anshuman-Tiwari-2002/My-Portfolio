@@ -2,7 +2,7 @@ import Tippy from "@tippyjs/react";
 import clsx from "clsx";
 import links from "data/links";
 import type { IconType } from "react-icons";
-import { FaMedium, FaGithubAlt, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaGithubAlt, FaInstagram, FaLinkedinIn, FaMedium, FaTwitter } from "react-icons/fa";
 
 type Profile = {
   title: string;
