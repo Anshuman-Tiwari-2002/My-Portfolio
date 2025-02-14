@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import ImageLink from "components/ImageLink";
 import links from "data/links";
-import { Fimedium } from "react-icons/fi";
+import { FaMedium } from "react-icons/fa";
 import { mediumArticles, Section } from "types/Sections";
 import { getSectionHeading, openURLInNewTab } from "utils";
 
@@ -25,9 +25,10 @@ const Designs: React.FC<Props> = ({ mediumArticles }) => (
       ))}
     </div>
 
-    <Button icon={Fimedium} onClick={() => openURLInNewTab(links.medium)} className="mt-8">
-      Articles on medium
+    <Button icon={FaMedium} onClick={() => openURLInNewTab(links.medium)} className="mt-8">
+      Articles on Medium
     </Button>
+
   </div>
 );
 
