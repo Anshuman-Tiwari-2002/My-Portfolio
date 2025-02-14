@@ -1,6 +1,6 @@
 import cached_mediumArticles from "public/cached/mediumArticles.json";
 // import cached_instagramMedia from "public/cached/instagramMedia.json";
-import { /*Article,*/ InstagramMedia,mediumArticles } from "types/Sections";
+import { /*Article, InstagramMedia,*/mediumArticles } from "types/Sections";
 
 // export const getArticles = async (): Promise<Article[]> => {
 //   const pageSize = 6;
