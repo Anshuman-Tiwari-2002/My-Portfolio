@@ -62,7 +62,7 @@ const projectsList: Project[] = [
   },
   {
     id: 6,
-    image: "/images/projects/rlogistics-cover.jpg",
+    image: "/images/projects/rlogistics-cover.jpg", //upper case jpg
     name: "Rlogistics app",
     summary:
       "A delivery management system with Driver and Admin Dashboards for tracking deliveries, vehicles, payments, and attendance. Built with the MERN stack, it features Role-Based Access for better task management.",
