@@ -5,7 +5,7 @@ const links = {
   github: "https://github.com/Anshuman-Tiwari-2002",
   medium: "https://medium.com/@anshumant111",
   resume: "https://drive.google.com/file/d/18lNS_kRG430hExPEcegvqHVmHhAr1ked/view?usp=drivesdk",
-  repository: "https://github.com/AmruthPillai/ResumeOnTheWeb",
+  repository: "https://github.com/Anshuman-Tiwari-2002/My-Portfolio",
 };
 
 export default links;
