@@ -28,7 +28,7 @@ const workExperiences: WorkExperience[] = [
     period: { start: "Jan 2025", end: "Present" },
     position: "Full Stack Developer",
     location: "Remote, India",
-    summary: "",
+    summary: "Contributing to the development and maintenance of scalable web applications using Next.js, TypeScript, and modern UI frameworks. Actively involved in building reliable backend services, optimizing database interactions, and implementing secure access control mechanisms. Collaborating closely with team members to deliver clean, maintainable code while adhering to best practices and performance standards.",
     keyFocus: ["ReactJs", "Next.js", "Node.js", "CSS", "PostgressSQL", "MYSQL"],
   },
   {
