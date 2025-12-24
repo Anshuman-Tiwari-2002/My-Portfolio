@@ -27,10 +27,8 @@ const Header: React.FC = () => {
         Berlin, Germany &amp; Bengaluru, India
       </h1>
 
-      {/* Ingredients */}
       <Ingredients />
 
-      {/* Social Profiles */}
       <Profiles />
     </div>
   );

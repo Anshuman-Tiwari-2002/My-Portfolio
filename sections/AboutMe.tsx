@@ -20,7 +20,7 @@ const AboutMe = () => (
         <p>Hey there!</p>
 
         <p>
-          I&apos;m Anshuman Tiwari, a graduate with a Bachelor&pos;s degree (BE) in Computer Science and Engineering.
+          I&apos;m Anshuman Tiwari, a graduate with a Bachelor&apos;s degree (BE) in Computer Science and Engineering.
           My passion for technology, software development, and problem-solving has been a driving force in my journey.
         </p>
 
@@ -30,7 +30,7 @@ const AboutMe = () => (
         </p>
 
         <p>
-          Whether it&pos;s writing code, troubleshooting software, or experimenting with new gadgets, I find my greatest joy when immersed in technology.
+          Whether it&apos;s writing code, troubleshooting software, or experimenting with new gadgets, I find my greatest joy when immersed in technology.
           Beyond textbooks and equations, real-world experiences have shaped my understanding and fueled my passion.
         </p>
 

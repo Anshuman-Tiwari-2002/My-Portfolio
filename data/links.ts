@@ -4,7 +4,7 @@ const links = {
   twitter: "https://x.com/Anshuman26473?t=kp-O7Atwhl2n0Xa82bE54g&s=09",
   github: "https://github.com/Anshuman-Tiwari-2002",
   medium: "https://medium.com/@anshumant111",
-  resume: "https://drive.google.com/file/d/1cS_gdKA1hl9X2kzoBs5jiiC5PehdXJfE/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1T9wChuNzhmaA3a4mukUdZ-c0bHfyh2Ji/view?usp=sharing",
   repository: "https://github.com/Anshuman-Tiwari-2002/My-Portfolio",
 };
 
