@@ -15,7 +15,7 @@ type Props = {
 
 const PhotoWall: React.FC<Props> = ({ size = 512 }) => {
   return (
-    <div className="flex gap-1" style={{ width: size, height: size }}>
+    <div className="flex gap-1 overflow-hidden rounded-[1.35rem]" style={{ width: size, height: size }}>
       {photos.map((photo, index) => (
         <div
           key={photo}
@@ -39,7 +39,7 @@ const PhotoWall: React.FC<Props> = ({ size = 512 }) => {
             src={photo}
             alt="Anshuman Tiwari"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className={clsx("object-cover", { "rounded-l": index === 0, "rounded-r": index === photos.length - 1 })}
+            className={clsx("object-cover", { "rounded-l-[1.1rem]": index === 0, "rounded-r-[1.1rem]": index === photos.length - 1 })}
           />
         </div>
       ))}

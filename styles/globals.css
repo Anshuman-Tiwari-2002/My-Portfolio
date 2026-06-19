@@ -3,10 +3,99 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Styles */
-body {
-  font-family: "Albert Sans", sans-serif;
+:root {
+  --color-bg: 248 250 252;
+  --color-bg-soft: 241 245 249;
+  --color-surface: 255 255 255;
+  --color-surface-raised: 255 255 255;
+  --color-border: 203 213 225;
+  --color-border-strong: 148 163 184;
+  --color-text: 15 23 42;
+  --color-muted: 71 85 105;
+  --color-subtle: 100 116 139;
+  --color-accent: 20 184 166;
+  --color-accent-strong: 13 148 136;
+  --color-focus: 45 212 191;
+  --shadow-soft: 0 18px 70px rgb(15 23 42 / 0.08);
+  --shadow-ring: 0 0 0 1px rgb(15 23 42 / 0.06);
+}
 
-  @apply text-neutral-900 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900;
-  @apply text-xs sm:text-sm;
+.dark {
+  --color-bg: 3 7 18;
+  --color-bg-soft: 15 23 42;
+  --color-surface: 15 23 42;
+  --color-surface-raised: 17 24 39;
+  --color-border: 51 65 85;
+  --color-border-strong: 100 116 139;
+  --color-text: 248 250 252;
+  --color-muted: 203 213 225;
+  --color-subtle: 148 163 184;
+  --color-accent: 45 212 191;
+  --color-accent-strong: 94 234 212;
+  --color-focus: 94 234 212;
+  --shadow-soft: 0 22px 80px rgb(0 0 0 / 0.36);
+  --shadow-ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-app text-foreground font-sans antialiased selection:bg-accent/25 selection:text-foreground;
+    @apply text-sm leading-7 sm:text-[15px];
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    @apply outline-none;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible {
+    @apply ring-2 ring-focus ring-offset-2 ring-offset-app;
+  }
+
+  ::placeholder {
+    @apply text-subtle;
+  }
+}
+
+@layer components {
+  .prose {
+    --tw-prose-body: rgb(var(--color-muted));
+    --tw-prose-headings: rgb(var(--color-text));
+    --tw-prose-lead: rgb(var(--color-muted));
+    --tw-prose-links: rgb(var(--color-accent-strong));
+    --tw-prose-bold: rgb(var(--color-text));
+    --tw-prose-counters: rgb(var(--color-subtle));
+    --tw-prose-bullets: rgb(var(--color-border-strong));
+    --tw-prose-hr: rgb(var(--color-border));
+    --tw-prose-quotes: rgb(var(--color-text));
+    --tw-prose-quote-borders: rgb(var(--color-border));
+    --tw-prose-captions: rgb(var(--color-subtle));
+    --tw-prose-code: rgb(var(--color-text));
+    --tw-prose-pre-code: rgb(var(--color-bg));
+    --tw-prose-pre-bg: rgb(var(--color-text));
+    --tw-prose-th-borders: rgb(var(--color-border-strong));
+    --tw-prose-td-borders: rgb(var(--color-border));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

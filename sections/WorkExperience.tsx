@@ -1,125 +1,93 @@
-import Tippy from "@tippyjs/react";
-import clsx from "clsx";
+import workExperiences, { type WorkExperience as WorkExperienceType } from "data/experience";
 import Image from "next/image";
-import { useState } from "react";
 import { FaLocationArrow } from "react-icons/fa";
-import { MdMoreHoriz } from "react-icons/md";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
-const DISPLAY_COUNT = 3;
-
-type WorkExperience = {
-  id: number;
-  logo: string;
-  name: string;
-  period: { start: string; end: string };
-  position: string;
-  location: string;
-  summary: string;
-  keyFocus: string[];
-};
-
-const workExperiences: WorkExperience[] = [
-  {
-    id: 1,
-    logo: "/images/work-experience/Sophize logo.jpeg",
-    name: "Sophize Technologies",
-    period: { start: "Jan 2025", end: "Present" },
-    position: "Full Stack Developer",
-    location: "Remote, India",
-    summary: "Contributing to the development and maintenance of scalable web applications using Next.js, TypeScript, and modern UI frameworks. Actively involved in building reliable backend services, optimizing database interactions, and implementing secure access control mechanisms. Collaborating closely with team members to deliver clean, maintainable code while adhering to best practices and performance standards.",
-    keyFocus: ["ReactJs", "Next.js", "Node.js", "CSS", "PostgressSQL", "MYSQL"],
-  },
-  {
-    id: 2,
-    logo: "/images/work-experience/Rlogistics logo.jpg",
-    name: "Rlogistics",
-    period: { start: "Jun 2024", end: "Aug 2024" },
-    position: "Full Stack Developer",
-    location: "Faridabad, India",
-    summary:
-      "Developed a dynamic Driver and Admin Dashboard using the MERN stack, enabling seamless CRUD operations for managing delivery details, including drivers, vehicles, payments, and attendance. Implemented Role-Based Access Control (RBAC) to enhance task visibility for drivers while reducing admin workload, ensuring more efficient and streamlined delivery operations.",
-    keyFocus: ["MongoDB", "Express.js", "React.js", "Node.js"],
-  },
-  {
-    id: 3,
-    logo: "/images/work-experience/EvoluteIQ.svg",
-    name: "EvoluteIQ Solutions Private limited.",
-    period: { start: "Feb 2024", end: "Apr 2024" },
-    position: "Software Trainee intern",
-    location: "Mangalore, India",
-    summary:
-      "Enhanced UI/UX design skills by creating intuitive, user-friendly interfaces while meeting project deadlines.Gained hands-on experience with the EvoluteIQ platform, leveraging its tools and resources to complete key assignments efficiently. As a final task, developed a comprehensive Project Management System, demonstrating effective resource utilization and a deep understanding of the platform’s capabilities.",
-    keyFocus: ["UI", "UX"],
-  },
-];
-
 type Props = {
-  data: WorkExperience;
-  isFirst: boolean;
-  isLast: boolean;
+  data: WorkExperienceType;
+  isPrimary: boolean;
 };
 
-const WorkExperience: React.FC<Props> = ({ data, isFirst, isLast }) => (
-  <div className="flex group">
-    <div className={clsx("ml-1 w-1 flex-shrink-0 bg-neutral-500/25", { "rounded-t": isFirst, "rounded-b": isLast })} />
+const WorkExperience: React.FC<Props> = ({ data, isPrimary }) => (
+  <article className={`group relative overflow-hidden rounded-xl border border-border bg-surface/75 p-5 shadow-ring backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-soft lg:p-6 ${isPrimary ? "border-accent/25 bg-surface/85 lg:p-7" : ""}`}>
+    {isPrimary && <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent-strong to-transparent" />}
 
-    <div className="-ml-2 mt-8 flex-shrink-0 relative w-3 h-3 rounded-full shadow-lg bg-teal-500/80 dark:bg-white/80 group-hover:w-6 transition-[width]" />
-
-    <div className="mt-5 ml-8 grid gap-2 pb-2">
-      <div className="relative w-[100px] h-10">
-        <Image src={data.logo} alt={data.name} width={45} height={50} className="object-contain" />
+    <div className="flex items-start gap-4">
+      <div className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-xl border border-border bg-white p-2 shadow-ring">
+        <Image src={data.logo} alt={data.name} width={44} height={44} className="object-contain" />
       </div>
 
-      <div>
-        <h3>
-          <span className="text-base font-bold">{data.name}</span>{" "}
-          <span className="text-xs">
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-center gap-2">
+          {isPrimary && (
+            <span className="rounded-full bg-accent/15 px-2.5 py-1 text-2xs font-bold uppercase tracking-wide text-accent-strong">
+              Current focus
+            </span>
+          )}
+          <span className="text-xs font-semibold text-subtle">
             ({data.period.start} - {data.period.end})
           </span>
+        </div>
+
+        <h3 className={isPrimary ? "mt-2 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl" : "mt-2 text-xl font-bold tracking-tight text-foreground"}>
+          {data.name}
         </h3>
-        <h4>{data.position}</h4>
+        <h4 className="text-sm font-bold text-accent-strong">{data.position}</h4>
       </div>
-
-      <h5 className="my-1 flex gap-2 items-center text-xs">
-        <FaLocationArrow />
-        <span>{data.location}</span>
-      </h5>
-
-      <p className="prose prose-sm prose-neutral dark:prose-invert">{data.summary}</p>
-
-      <p className="text-xs leading-relaxed prose-sm prose-neutral dark:prose-invert">
-        <strong>Key Focus:</strong> {data.keyFocus.join(", ")}
-      </p>
     </div>
-  </div>
+
+    <h5 className="mt-5 flex items-center gap-2 text-xs font-semibold text-subtle">
+      <FaLocationArrow />
+      <span>{data.location}</span>
+    </h5>
+
+    <p className={isPrimary ? "mt-5 max-w-4xl text-base leading-8 text-muted" : "mt-4 text-sm leading-7 text-muted"}>
+      {data.summary}
+    </p>
+
+    {isPrimary && (
+      <div className="mt-6 grid gap-3">
+        <div className="rounded-xl border border-border bg-app/45 p-4 shadow-ring">
+          <p className="text-xs font-semibold uppercase tracking-wide text-subtle">Impact highlights</p>
+          <ul className="mt-3 grid gap-2 text-sm leading-6 text-muted">
+            {data.highlights?.map((highlight) => (
+              <li key={highlight} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )}
+
+    <div className="mt-5 flex flex-wrap gap-2">
+      {data.keyFocus.map((focus) => (
+        <span key={focus} className="rounded-full border border-border bg-app-soft px-2.5 py-1 text-2xs font-semibold text-subtle">
+          {focus}
+        </span>
+      ))}
+    </div>
+  </article>
 );
 
-const WorkExperienceTimeline = () => {
-  const [showMore, setShowMore] = useState(workExperiences.length > DISPLAY_COUNT ? false : true);
-
-  return (
-    <div id={Section.WorkExperience}>
+const WorkExperienceTimeline = () => (
+  <section id={Section.WorkExperience}>
+    <div className="mb-4">
       {getSectionHeading(Section.WorkExperience)}
-
-      <div className="flex flex-col">
-        {workExperiences
-          .filter((_, index) => (showMore ? true : index < DISPLAY_COUNT))
-          .map((data, index) => (
-            <WorkExperience key={data.id} data={data} isFirst={index === 0} isLast={index === 2} />
-          ))}
-      </div>
-
-      {!showMore && (
-        <Tippy content={`Show ${workExperiences.length - DISPLAY_COUNT} More`} placement="right">
-          <div className="inline-block ml-8 p-2 cursor-pointer" onClick={() => setShowMore(true)}>
-            <MdMoreHoriz size="24" />
-          </div>
-        </Tippy>
-      )}
+      <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Experience building software that ships.</h2>
+      <p className="mt-3 max-w-2xl text-base leading-8 text-muted">
+        Current engineering work is treated as the strongest career signal, with impact surfaced instead of buried.
+      </p>
     </div>
-  );
-};
+
+    <div className="grid gap-4">
+      {workExperiences.map((data, index) => (
+        <WorkExperience key={data.id} data={data} isPrimary={index === 0} />
+      ))}
+    </div>
+  </section>
+);
 
 export default WorkExperienceTimeline;

@@ -18,22 +18,27 @@ const Button: React.FC<React.PropsWithChildren<Props>> = ({
 }) => {
   return (
     <div className={clsx("flex", className)}>
-      <div
-        className={clsx("relative cursor-pointer", { "cursor-not-allowed opacity-75": disabled })}
+      <button
+        type="button"
+        disabled={disabled}
+        className={clsx("group relative rounded transition-opacity", { "cursor-not-allowed opacity-60": disabled })}
         onClick={disabled ? () => { } : onClick}
       >
         <div
           className={clsx(
-            "relative rounded-sm z-10 px-8 py-2.5 flex gap-2.5 items-center justify-center bg-neutral-900 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-900 top-0 left-0 transition-[top_left] hover:top-0.5 hover:left-0.5 active:top-1 active:left-1",
+            "relative left-0 top-0 z-10 flex items-center justify-center gap-2.5 rounded px-7 py-2.5 text-sm font-semibold",
+            "bg-foreground text-app shadow-ring transition-[top_left_background-color_color]",
+            "hover:left-0.5 hover:top-0.5 hover:bg-accent-strong hover:text-app",
+            "active:left-1 active:top-1",
             { "hover:top-0 hover:left-0 active:top-0 active:left-0": disabled }
           )}
         >
           {Icon && <Icon fontSize={16} />}
-          <span className="font-bold">{children}</span>
+          <span>{children}</span>
         </div>
 
-        <div className="w-full h-full rounded-sm absolute top-1 left-1 border-2 border-neutral-900 dark:border-neutral-50" />
-      </div>
+        <div className="absolute left-1 top-1 h-full w-full rounded border border-border-strong bg-surface" />
+      </button>
     </div>
   );
 };

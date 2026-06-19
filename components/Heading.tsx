@@ -6,10 +6,14 @@ type Props = {
 };
 
 const Heading: React.FC<Props> = ({ icon: Icon, children }) => (
-  <div className="flex items-center gap-2 mb-8 hover:text-teal-600 hover:dark:text-teal-400 transition-colors">
-    {Icon && <Icon size={14} />}
+  <div className="mb-8 flex items-center gap-3 text-subtle transition-colors hover:text-accent-strong">
+    {Icon && (
+      <span className="grid h-7 w-7 place-items-center rounded border border-border bg-surface text-accent shadow-ring">
+        <Icon size={14} />
+      </span>
+    )}
 
-    <span className="font-bold uppercase text-xs relative -bottom-px">{children}</span>
+    <span className="relative -bottom-px text-section-label font-bold uppercase text-foreground">{children}</span>
   </div>
 );
 

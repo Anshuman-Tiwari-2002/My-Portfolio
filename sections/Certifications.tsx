@@ -4,22 +4,22 @@ import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
 const Certifications = () => (
-  <div id={Section.Certifications}>
+  <div id={Section.Certifications} className="rounded-xl border border-border bg-surface/35 p-4 opacity-75 shadow-sm">
     {getSectionHeading(Section.Certifications)}
 
-    <div className="grid gap-4">
+    <div className="grid gap-1">
       {certificationsList.map((certification) => (
-        <div key={certification.id} className="flex gap-5 group">
-          <div>
+        <div key={certification.id} className="group flex gap-2 rounded-lg border border-border/70 bg-app/25 px-3 py-1.5 transition hover:border-accent/40 hover:bg-surface/60">
+          <div className="pt-0.5">
             <MdChevronRight
-              fontSize={20}
-              className="relative left-0 group-hover:left-3 group-hover:text-teal-500 transition-[left_color]"
+              fontSize={16}
+              className="relative left-0 text-subtle transition-[left_color] group-hover:left-1 group-hover:text-accent"
             />
           </div>
 
           <div className="leading-relaxed">
-            <h5 className="font-bold group-hover:text-teal-500 transition-[color]">{certification.title}</h5>
-            <p className="prose prose-sm prose-neutral dark:prose-invert">{certification.subtitle}</p>
+            <h5 className="text-sm font-semibold text-foreground transition-[color] group-hover:text-accent-strong">{certification.title}</h5>
+            <p className="text-[11px] text-muted">{certification.subtitle}</p>
           </div>
         </div>
       ))}

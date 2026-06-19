@@ -50,6 +50,8 @@ export type Project = {
   name: string;
   summary: string;
   tags: string[];
+  featured?: boolean;
+  category?: "featured" | "other";
   link?: {
     web?: string;
     github?: string;

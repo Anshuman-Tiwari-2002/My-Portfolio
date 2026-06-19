@@ -47,11 +47,15 @@ const profiles: Profile[] = [
 ];
 
 const Profiles: React.FC = () => (
-  <div className="h-[22px] mt-5 flex gap-8">
+  <div className="mt-7 flex flex-wrap gap-3">
     {profiles.map(({ title, link, icon: Icon, className }, index) => (
       <Tippy key={title} content={title} placement="bottom">
         <span
-          className={clsx("p-1 text-sm text-white rounded-full", "animate__animated animate__fadeIn", className)}
+          className={clsx(
+            "grid h-9 w-9 place-items-center rounded-full text-sm text-white shadow-ring transition-transform hover:-translate-y-0.5",
+            "animate__animated animate__fadeIn",
+            className
+          )}
           style={{ animationDelay: `${index * 0.5 + 6}s` }}
         >
           <a href={link} target="_blank" rel="noreferrer">

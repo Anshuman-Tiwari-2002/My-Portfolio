@@ -1,4 +1,5 @@
 import Tippy from "@tippyjs/react";
+import clsx from "clsx";
 import { ThemeContext } from "contexts/ThemeProvider";
 import { sectionsArray } from "data/sections";
 import useWindowDimensions, { Breakpoints } from "hooks/useWindowDimensions";
@@ -19,56 +20,91 @@ const Navigation = () => {
 
   if (!isDesktop) {
     return (
-      <div className="fixed inset-x-0 top-0 px-3 py-5 w-screen text-neutral-800 dark:text-neutral-200 flex items-center justify-between">
+      <div className="fixed inset-x-0 top-0 z-50 flex w-screen items-center justify-between px-4 py-4 text-foreground">
         <Tippy content={<small>Go to Top</small>} placement="right">
-          <div
+          <button
+            type="button"
             onClick={animateScroll.scrollToTop}
-            className="p-1 flex cursor-pointer grayscale hover:grayscale-0 transition-[filter]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface/80 shadow-ring backdrop-blur transition hover:scale-105"
           >
             <Image src="/images/icon.png" alt="Anshuman Tiwari" width={32} height={32} />
-          </div>
+          </button>
         </Tippy>
 
-        <Tippy content={<small>Toggle Theme</small>} placement="right">
-          <div onClick={toggleTheme} className="p-1 cursor-pointer hover:text-teal-500 transition-colors">
-            {isDarkMode ? <FaMoon /> : <FaSun />}
-          </div>
-        </Tippy>
+        <div className="flex items-center gap-2 rounded-full border border-border bg-surface/80 p-1 shadow-soft backdrop-blur">
+          {sectionsArray.slice(0, 4).map(({ id, icon: Icon, title }) => (
+            <Tippy key={id} content={<small>{title}</small>} placement="bottom">
+              <button
+                type="button"
+                className="grid h-9 w-9 place-items-center rounded-full text-subtle transition hover:bg-app-soft hover:text-accent-strong"
+                onClick={() => goToSection(id)}
+              >
+                <Icon />
+                <span className="sr-only">{title}</span>
+              </button>
+            </Tippy>
+          ))}
+
+          <Tippy content={<small>Toggle Theme</small>} placement="bottom">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="grid h-9 w-9 place-items-center rounded-full bg-foreground text-app transition hover:bg-accent-strong"
+            >
+              {isDarkMode ? <FaMoon /> : <FaSun />}
+              <span className="sr-only">Toggle Theme</span>
+            </button>
+          </Tippy>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="fixed inset-y-0 w-16 py-5 h-screen text-neutral-800 dark:text-neutral-200 flex flex-col items-center justify-between">
+    <div className="fixed inset-y-0 left-0 z-50 flex h-screen w-20 flex-col items-center justify-between py-6 text-foreground">
       <Tippy content={<small>Go to Top</small>} placement="right">
-        <div
+        <button
+          type="button"
           onClick={animateScroll.scrollToTop}
-          className="p-1 flex cursor-pointer grayscale hover:grayscale-0 transition-[filter]"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface/80 shadow-ring backdrop-blur transition hover:scale-105"
         >
           <Image src="/images/icon.png" alt="Anshuman Tiwari" width={32} height={32} />
-        </div>
+        </button>
       </Tippy>
 
-      <div className="flex-1 w-7 overflow-hidden flex justify-start items-center group">
-        <div className="flex w-full transition-[margin] ml-2 group-hover:-ml-7">
-          <FiMenu />
-        </div>
+      <div className="group flex max-h-[68vh] items-center rounded-full border border-border bg-surface/75 p-2 shadow-soft backdrop-blur">
+        <div className="grid gap-1">
+          <div className="grid h-9 w-9 place-items-center rounded-full text-subtle transition group-hover:text-accent">
+            <FiMenu />
+          </div>
 
-        <div className="flex flex-col ml-2">
           {sectionsArray.map(({ id, icon: Icon, title }) => (
             <Tippy key={id} content={<small>{title}</small>} placement="right">
-              <div className="cursor-pointer py-3" onClick={() => goToSection(id)}>
+              <button
+                type="button"
+                className={clsx(
+                  "grid h-9 w-9 place-items-center rounded-full text-subtle transition",
+                  "hover:bg-app-soft hover:text-accent-strong"
+                )}
+                onClick={() => goToSection(id)}
+              >
                 <Icon />
-              </div>
+                <span className="sr-only">{title}</span>
+              </button>
             </Tippy>
           ))}
         </div>
       </div>
 
       <Tippy content={<small>Toggle Theme</small>} placement="right">
-        <div onClick={toggleTheme} className="p-1 cursor-pointer hover:text-teal-500 transition-colors">
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="grid h-12 w-12 place-items-center rounded-full border border-border bg-foreground text-app shadow-ring transition hover:bg-accent-strong"
+        >
           {isDarkMode ? <FaMoon /> : <FaSun />}
-        </div>
+          <span className="sr-only">Toggle Theme</span>
+        </button>
       </Tippy>
     </div>
   );

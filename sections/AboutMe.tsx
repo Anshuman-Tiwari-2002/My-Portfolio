@@ -1,52 +1,32 @@
+import about from "data/about";
 import Image from "next/image";
 import { Section } from "types/Sections";
 import { getSectionHeading } from "utils";
 
 const AboutMe = () => (
-  <div id={Section.AboutMe}>
+  <section id={Section.AboutMe}>
     {getSectionHeading(Section.AboutMe)}
 
-    <div className="grid md:grid-cols-4 gap-12">
-      <div className="relative col-span-1 hidden md:block">
-        <Image
-          fill
-          alt="Selfie Boy"
-          src="/images/about-me/selfie-boy.svg"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+    <div className="grid gap-5 rounded-xl border border-border bg-surface/65 p-5 shadow-ring backdrop-blur lg:grid-cols-[0.85fr_1.15fr] lg:p-6">
+      <div className="relative hidden min-h-[240px] overflow-hidden rounded-xl border border-border bg-app-soft lg:block">
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-accent/20 to-transparent" />
+        <Image fill alt="Selfie Boy" src="/images/about-me/selfie-boy.svg" sizes="30vw" className="object-contain p-7" />
       </div>
 
-      <div className="col-span-3 max-w-full prose prose-sm md:prose-base prose-neutral dark:prose-invert">
-        <p>Hey there!</p>
+      <div className="min-w-0">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent-strong">{about.greeting}</p>
+        <h2 className="mt-3 max-w-3xl text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          Full-Stack Software Engineer building products with Next.js, TypeScript, React Flow, and Node.js.
+        </h2>
 
-        <p>
-          I&apos;m Anshuman Tiwari, a graduate with a Bachelor&apos;s degree (BE) in Computer Science and Engineering.
-          My passion for technology, software development, and problem-solving has been a driving force in my journey.
-        </p>
-
-        <p>
-          Since childhood, I have been fascinated by computers and their potential to make life easier and more efficient.
-          As I&apos;ve grown, this curiosity has only deepened, pushing me to explore new challenges and opportunities in the ever-evolving tech landscape.
-        </p>
-
-        <p>
-          Whether it&apos;s writing code, troubleshooting software, or experimenting with new gadgets, I find my greatest joy when immersed in technology.
-          Beyond textbooks and equations, real-world experiences have shaped my understanding and fueled my passion.
-        </p>
-
-        <p>
-          Through challenges and triumphs, I have learned the power of creative problem-solving.
-          Now, I strive to channel that passion into engineering solutions that make a meaningful impact.
-        </p>
-
-        <p>
-          I created this website so I could showcase all this and through this process, make it easier for you to
-          connect with me. If you like what you see, head over to the <a href="#contact">contact section</a> below and
-          send me a text. I would love to hear from you!
-        </p>
+        <div className="mt-4 space-y-3 text-sm leading-7 text-muted">
+          {about.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default AboutMe;

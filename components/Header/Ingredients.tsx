@@ -1,3 +1,4 @@
+import hero from "data/hero";
 import Typewriter from "typewriter-effect";
 
 const Ingredients = () => (
@@ -14,13 +15,13 @@ const Ingredients = () => (
           .typeString("<span class='text-blue-500'>= </span>")
           .typeString("[<br>")
           .typeString("<span class='pl-5'></span>")
-          .typeString("<span class='text-red-500'>Designer</span>, ")
-          .typeString("<span class='text-red-500'>Developer</span>, ")
-          .typeString("<span class='text-red-500'>Writer</span>,<br>")
+          .typeString(`<span class='text-red-500'>${hero.ingredients[0]}</span>, `)
+          .typeString(`<span class='text-red-500'>${hero.ingredients[1]}</span>, `)
+          .typeString(`<span class='text-red-500'>${hero.ingredients[2]}</span>,<br>`)
           .typeString("<span class='pl-5'></span>")
-          .typeString("<span class='text-red-500'>Sugar</span>, ")
-          .typeString("<span class='text-red-500'>Spice</span>, ")
-          .typeString("<span class='text-red-500'>...everythingNice</span>,<br>")
+          .typeString(`<span class='text-red-500'>${hero.ingredients[3]}</span>, `)
+          .typeString(`<span class='text-red-500'>${hero.ingredients[4]}</span>, `)
+          .typeString(`<span class='text-red-500'>${hero.ingredients[5]}</span>,<br>`)
           .typeString("];")
           .start();
       }}

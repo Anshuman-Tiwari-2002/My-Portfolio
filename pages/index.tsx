@@ -37,31 +37,31 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ /*articles,*/ mediumArticles,/* instagramMedia */}) => (
-  <div className="w-5/6 mx-auto md:container grid gap-24">
+  <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 pb-16 sm:px-8 md:gap-12 lg:px-10">
     <Header />
 
     <AboutMe />
+    <WorkExperience />
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <WorkExperience />
-      <Education />
-    </div>
-
-    <Skills />
     <Projects />
-    {/* <Blog articles={articles} /> */}
-    <Languages />
+    <Skills />
+    <Achievements />
 
-    <div className="grid lg:grid-cols-3 gap-12">
-      <Achievements />
-      <Certifications />
-      {/* <Philantrophy /> */}
+    <Resume />
+
+    <div className="grid gap-5 border-t border-border pt-6 lg:grid-cols-[1.1fr_1fr]">
+      <Education />
+      <div className="grid gap-5">
+        <Languages />
+        <Certifications />
+      </div>
     </div>
 
+    {/* <Blog articles={articles} /> */}
+    {/* <Philantrophy /> */}
     {/* <Photography instagramMedia={instagramMedia} /> */}
     {/* <Music /> */}
     <Designs mediumArticles={mediumArticles} />
-    <Resume />
     <Contact />
     {/* <AboutRotW /> */}
     <Footer />

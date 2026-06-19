@@ -31,7 +31,7 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div id={Section.Contact} className="lg:w-1/2">
+      <div id={Section.Contact} className="rounded-xl border border-border bg-surface/65 p-5 shadow-ring backdrop-blur lg:w-2/3 lg:p-6">
         {getSectionHeading(Section.Contact)}
         <p className="text-lg leading-loose">
           Thank you for your message.
@@ -43,7 +43,7 @@ const Contact = () => {
   }
 
   return (
-    <div id={Section.Contact} className="lg:w-1/2">
+    <div id={Section.Contact} className="rounded-xl border border-border bg-surface/65 p-5 shadow-ring backdrop-blur lg:w-2/3 lg:p-6">
       {getSectionHeading(Section.Contact)}
       <form onSubmit={onSubmit} className="grid gap-8">
         

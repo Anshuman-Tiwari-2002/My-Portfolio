@@ -55,7 +55,7 @@ const sectionsList: SectionMap = {
   // },
   [Section.Articles]: {
     icon: FaBook,
-    title: "Articles",
+    title: "Writing",
   },
   [Section.Resume]: {
     icon: FaFilePdf,
