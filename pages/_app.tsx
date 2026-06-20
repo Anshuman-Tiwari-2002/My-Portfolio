@@ -1,6 +1,6 @@
 import "animate.css";
 import "tippy.js/dist/tippy.css";
-import "styles/globals.css";
+import "../styles/globals.css";
 
 import Navigation from "components/Navigation";
 import NoSSR from "components/NoSSR";

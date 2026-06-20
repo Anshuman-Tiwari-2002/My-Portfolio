@@ -7,5 +7,7 @@ declare global {
     }
   }
 }
-
-export { };
+declare module "*.css";
+declare module "animate.css";
+declare module "tippy.js/dist/tippy.css";
+export {};
