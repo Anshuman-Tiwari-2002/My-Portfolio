@@ -6,6 +6,7 @@ export { default as Designs } from "./Articles";
 export { default as Certifications } from "./Certifications";
 export { default as Contact } from "./Contact";
 export { default as Education } from "./Education";
+export { default as FeaturedWork } from "./FeaturedWork";
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";
 export { default as Languages } from "./Languages";

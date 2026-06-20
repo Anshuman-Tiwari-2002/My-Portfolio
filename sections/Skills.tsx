@@ -8,20 +8,16 @@ type SkillGroup = {
 
 const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend",
-    technologies: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
+    title: "Core Stack",
+    technologies: ["Next.js", "TypeScript", "React", "React Flow", "Node.js", "Prisma", "PostgreSQL", "Firebase"],
   },
   {
-    title: "Backend",
-    technologies: ["Node.js", "REST APIs", "Prisma"],
+    title: "Product Engineering",
+    technologies: ["REST APIs", "Authentication", "Database Design", "Access Control", "Workflow Systems", "Internal Tools"],
   },
   {
-    title: "Databases",
-    technologies: ["PostgreSQL", "MongoDB", "MySQL"],
-  },
-  {
-    title: "Tools & Platforms",
-    technologies: ["Firebase", "Git", "Postman", "VS Code", "Selenium", "Android Studio"],
+    title: "Tools",
+    technologies: ["Git", "GitHub", "Postman", "VS Code"],
   },
 ];
 
@@ -30,7 +26,7 @@ const Skills = () => (
     {getSectionHeading(Section.Skills)}
 
     <div className="mb-3 max-w-3xl text-sm leading-7 text-muted">
-      A practical view of the stack, grouped by how the tools support product delivery.
+      A practical view of the stack, grouped by how the work is shipped and maintained.
     </div>
 
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">

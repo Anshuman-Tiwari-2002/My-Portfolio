@@ -78,7 +78,7 @@ const WorkExperienceTimeline = () => (
       {getSectionHeading(Section.WorkExperience)}
       <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Experience building software that ships.</h2>
       <p className="mt-3 max-w-2xl text-base leading-8 text-muted">
-        Current engineering work is treated as the strongest career signal, with impact surfaced instead of buried.
+        Current engineering work is treated as the strongest career signal, with responsibilities and product context surfaced instead of buried.
       </p>
     </div>
 

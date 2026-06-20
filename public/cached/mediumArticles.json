@@ -9,15 +9,18 @@
       "hidpi": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*roHPnDg_vLuWdKAntF8iyQ.jpeg",
       "normal": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*roHPnDg_vLuWdKAntF8iyQ.jpeg"
     },
-    "low_profile": false,
-    "tags": [
-      "generative AI"
-    ],
-    "title": "Generative AI: Transforming Content Creation",
-    "width": 1600,
-    "published_at": "2025-02-12T03:31:01Z",
-    "attachments": [],
-    "projects": [],
-    "video": null
+    "title": "Generative AI: Transforming Content Creation"
+  },
+  {
+    "animated": false,
+    "description": "<p></p>",
+    "height": 1200,
+    "html_url": "https://medium.com/@anshumant111/ai-wont-replace-developers-but-it-will-replace-developers-who-don-t-use-ai-24a4b34e3068",
+    "id": 11355179,
+    "images": {
+      "hidpi": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qRviHM5vf1tG3JNEW4reqg.png",
+      "normal": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qRviHM5vf1tG3JNEW4reqg.png"
+    },
+    "title": "AI Won't Replace Developers, But It Will Replace Developers Who Don't Use AI"
   }
 ]

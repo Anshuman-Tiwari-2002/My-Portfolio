@@ -20,7 +20,7 @@ const workExperiences: WorkExperience[] = [
     location: "India",
     summary:
       "Building production-grade product features at Sophize Technologies across educational platforms, workflow visualization systems, and employee management tools using Next.js, React Flow, TypeScript, Prisma, PostgreSQL, Firebase, and Node.js.",
-    keyFocus: ["Next.js", "React", "React Flow", "TypeScript", "Node.js", "REST APIs"],
+    keyFocus: ["Next.js", "TypeScript", "React Flow", "Prisma", "PostgreSQL", "Firebase", "Node.js"],
     highlights: [
       "Developed course management, instructor permissions, and metadata workflows for educational platforms.",
       "Built interactive workflow and process visualization features using React Flow.",
@@ -37,8 +37,8 @@ const workExperiences: WorkExperience[] = [
     position: "Software Trainee Intern",
     location: "Mangaluru, Karnataka, India",
     summary:
-      "Designed and delivered user-friendly interfaces on EvoluteIQ's low-code automation platform, improving UI/UX consistency and reducing user friction by 25%. Completed 10+ module assignments, contributed to process optimization initiatives, and built a Project Management System capstone that streamlined resource allocation.",
-    keyFocus: ["UI/UX", "Low-code Automation", "Agile Delivery", "Project Management System"],
+      "Designed and delivered interfaces on EvoluteIQ's low-code automation platform. Completed module assignments, built a Project Management System capstone, and developed a practical understanding of UI development and process flow.",
+    keyFocus: ["UI Development", "Low-code Platform", "Module Assignments", "Project Management System"],
   },
 ];
 

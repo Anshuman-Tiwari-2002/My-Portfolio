@@ -1,11 +1,8 @@
 import { format } from "date-fns";
-
 const Footer = () => (
-  <div id="footer" className="mb-16 text-xs leading-loose opacity-30">
-    {/* Licensed under MIT. */}
-    <br />
-  <center> © {format(new Date(), "yyyy")}   Made with Love ❤️</center>
-  </div>
+  <footer id="footer" className=" py-6 text-center text-sm text-muted opacity-60">
+    © {format(new Date(), "yyyy")} • Built by Anshuman Tiwari
+  </footer>
 );
 
 export default Footer;
